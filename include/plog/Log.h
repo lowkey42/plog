@@ -10,11 +10,11 @@
 //////////////////////////////////////////////////////////////////////////
 // Helper macros that get context info
 
-#if defined(_MSC_VER) && _MSC_VER >= 1600 && !defined(__INTELLISENSE__) && !defined(__INTEL_COMPILER) && !defined(__llvm__) && !defined(__RESHARPER__) // >= Visual Studio 2010, skip IntelliSense, Intel Compiler, Clang Code Model and ReSharper
-#   define PLOG_GET_THIS()      __if_exists(this) { this } __if_not_exists(this) { 0 }
-#else
+//#if defined(_MSC_VER) && _MSC_VER >= 1600 && !defined(__INTELLISENSE__) && !defined(__INTEL_COMPILER) && !defined(__llvm__) && !defined(__RESHARPER__) // >= Visual Studio 2010, skip IntelliSense, Intel Compiler, Clang Code Model and ReSharper
+//#   define PLOG_GET_THIS()      __if_exists(this) { this } __if_not_exists(this) { 0 }
+//#else
 #   define PLOG_GET_THIS()      reinterpret_cast<void*>(0)
-#endif
+//#endif
 
 #ifdef _MSC_VER
 #   define PLOG_GET_FUNC()      __FUNCTION__
